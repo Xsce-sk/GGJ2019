@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class LockCleanMechanic : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] BoxCollider2D objBoxCollider2D;
+
     void Start()
+    {
+        objBoxCollider2D = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
