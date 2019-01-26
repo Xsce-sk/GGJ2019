@@ -9,6 +9,7 @@ public class SpriteController : MonoBehaviour
 
     public BoxCollider2D playerCollider;
     public GameObject spawner;
+    public GameObject interacter;
     [SerializeField] private bool DEBUG_TRACE = true;
     [SerializeField] private float horizontal;
     [SerializeField] private float vertical;
@@ -30,9 +31,10 @@ public class SpriteController : MonoBehaviour
         {
             spriteTransform.localScale = new Vector3(horizontal, spriteTransform.localScale.y, spriteTransform.localScale.z);
             
-            playerCollider.offset = new Vector2(2.0f, -0.333333f);
+            //playerCollider.offset = new Vector2(2.0f, -0.333333f);
             spawnerTransform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-                
+            interacter.transform.position = new Vector3(spriteTransform.position.x + 2.0f * horizontal, spriteTransform.position.y - 0.333333f, 0.0f);
+
             if (DEBUG_TRACE)
                 print("Facing Right");
         }/*
@@ -50,8 +52,9 @@ public class SpriteController : MonoBehaviour
             if (vertical == 1)
             {
                 // Switch to sprite facing up
-                playerCollider.offset = new Vector2(0.0f, 1.0f);
-                spawnerTransform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+                //playerCollider.offset = new Vector2(0.0f, 1.0f);
+                spawnerTransform.localPosition = new Vector3(0.0f, 1.0f, 0.0f);
+                interacter.transform.position = new Vector3(spriteTransform.position.x, spriteTransform.position.y + 1.0f, 0.0f);
 
 
 
@@ -61,8 +64,9 @@ public class SpriteController : MonoBehaviour
             else if (vertical == -1)
             {
                 // Switch to sprite facing down
-                playerCollider.offset = new Vector2(0.0f, -1.666667f);
-                spawnerTransform.localPosition = new Vector3(0.0f, -1.25f, 0.0f);
+                //playerCollider.offset = new Vector2(0.0f, -1.666667f);
+                spawnerTransform.localPosition = new Vector3(0.0f, -1.0f, 0.0f);
+                interacter.transform.position = new Vector3(spriteTransform.position.x, spriteTransform.position.y - 2.5f, 0.0f);
 
 
 
