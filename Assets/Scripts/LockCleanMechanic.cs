@@ -5,15 +5,25 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class LockCleanMechanic : MonoBehaviour
 {
-    [SerializeField] BoxCollider2D objBoxCollider2D;
+    protected BoxCollider2D m_BoxCollider2D;
+
+    protected bool m_IsCleaning;
 
     void Start()
     {
-        objBoxCollider2D = GetComponent<BoxCollider2D>();
+        m_BoxCollider2D = GetComponent<BoxCollider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Dirty"))
+        {
+            // stop player movement
+            m_IsCleaning = true;
+        }
     }
+
+    
+
+
 }
