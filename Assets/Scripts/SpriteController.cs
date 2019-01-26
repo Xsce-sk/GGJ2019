@@ -29,14 +29,12 @@ public class SpriteController : MonoBehaviour
         {
             spriteTransform.localScale = new Vector3(horizontal, spriteTransform.localScale.y, spriteTransform.localScale.z);
             
-            if(horizontal != 0)
-            {
-                playerCollider.offset = new Vector2(2.0f, -0.333333f);
-                spawnerTransform.localPosition = new Vector3(1.0f, -0.33f, 0.0f);
+            playerCollider.offset = new Vector2(2.0f, -0.333333f);
+            spawnerTransform.localPosition = new Vector3(1.0f, -0.33f, 0.0f);
                 
-                if (DEBUG_TRACE)
-                    print("Facing Right");
-            }/*
+            if (DEBUG_TRACE)
+                print("Facing Right");
+        }/*
             else
             {
                 playerCollider.offset = new Vector2(-2.0f, -0.333333f);
@@ -45,7 +43,6 @@ public class SpriteController : MonoBehaviour
                 if (DEBUG_TRACE)
                     print("Facing Left");
             }*/
-        }
         // Facing Up or Down
         else if (vertical != 0)
         {

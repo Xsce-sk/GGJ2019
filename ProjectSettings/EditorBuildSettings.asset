@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/SpriteControllerTest.unity
+    guid: 6679f5863b9619f428308a7cc34f9020
+  - enabled: 1
+    path: Assets/Scenes/UITest.unity
+    guid: 14486ffb2320b904395f008e75f71495
   m_configObjects: {}
