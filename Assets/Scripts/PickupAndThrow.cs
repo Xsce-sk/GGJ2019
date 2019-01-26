@@ -28,13 +28,13 @@ public class PickupAndThrow : MonoBehaviour
         if(col.gameObject.name.Contains("Trash"))
         {
             inventory.Push(0);
+            Destroy(col.gameObject);
         }
 
         if(col.gameObject.name.Contains("Clothes"))
         {
             inventory.Push(1);
+            Destroy(col.gameObject);
         }
-
-        Destroy(col.gameObject);
     }
 }
