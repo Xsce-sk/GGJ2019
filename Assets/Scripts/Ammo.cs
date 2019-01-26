@@ -10,7 +10,7 @@ public class Ammo : MonoBehaviour
     public GameObject ammoType;
     Vector2 v;
     public Transform playerTransform;
-    public float offset = 1;;
+    public float offset = 1;
     
     // Start is called before the first frame update
     void Start()
