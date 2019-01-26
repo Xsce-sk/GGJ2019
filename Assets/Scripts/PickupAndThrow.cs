@@ -23,7 +23,7 @@ public class PickupAndThrow : MonoBehaviour
         }
     }
 
-    void OnColliderEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.name.Contains("Trash") && !col.gameObject.name.Contains("Ammo"))
         {
