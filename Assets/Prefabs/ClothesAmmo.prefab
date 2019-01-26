@@ -134,3 +134,7 @@ MonoBehaviour:
   speed: 10
   ammoType: {fileID: 8504922839414725965, guid: f40d6163a0bff1a4d8b47b002e7932a4,
     type: 3}
+  playerTransform: {fileID: 0}
+  offset: 1
+  s: {fileID: 0}
+  scorePoints: 10

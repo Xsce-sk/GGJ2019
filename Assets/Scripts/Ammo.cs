@@ -11,6 +11,7 @@ public class Ammo : MonoBehaviour
     Vector2 v;
     public Transform playerTransform;
     public float offset = 1;
+    public int scorePoints = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -64,7 +65,7 @@ public class Ammo : MonoBehaviour
     {
         if (col.gameObject.name != "Player")
         {
-            if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Trash")))
+            if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes")))
             {
                 Vector3 spawnLocation = gameObject.transform.position;
 
@@ -87,8 +88,13 @@ public class Ammo : MonoBehaviour
 
                 Instantiate(ammoType, spawnLocation, Quaternion.identity);
             }
+            else if (col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes"))
+            {
+                Score.scoreTracker += scorePoints;
+            }
 
             Destroy(gameObject);
         }
+
     }
 }
