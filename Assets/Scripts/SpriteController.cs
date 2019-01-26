@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpriteController : MonoBehaviour
 {
     Transform spriteTransform;
+    Transform spawnerTransform;
 
     public BoxCollider2D playerCollider;
     public GameObject spawner;
@@ -15,6 +16,7 @@ public class SpriteController : MonoBehaviour
     void Start()
     {
         spriteTransform = this.GetComponent<Transform>();
+        spawnerTransform = spawner.GetComponent<Transform>();
     }
 
     void Update()
@@ -26,18 +28,23 @@ public class SpriteController : MonoBehaviour
         if (horizontal != 0)
         {
             spriteTransform.localScale = new Vector3(horizontal, spriteTransform.localScale.y, spriteTransform.localScale.z);
-            if(horizontal == 1)
+            
+            if(horizontal != 0)
             {
                 playerCollider.offset = new Vector2(2.0f, -0.333333f);
+                spawnerTransform.localPosition = new Vector3(1.0f, -0.33f, 0.0f);
+                
                 if (DEBUG_TRACE)
                     print("Facing Right");
-            }
+            }/*
             else
             {
                 playerCollider.offset = new Vector2(-2.0f, -0.333333f);
+                spawnerTransform.localPosition = new Vector3(1.0f, -0.33f, 0.0f);
+
                 if (DEBUG_TRACE)
                     print("Facing Left");
-            }
+            }*/
         }
         // Facing Up or Down
         else if (vertical != 0)
@@ -46,17 +53,19 @@ public class SpriteController : MonoBehaviour
             {
                 // Switch to sprite facing up
                 playerCollider.offset = new Vector2(0.0f, 1.0f);
+                spawnerTransform.localPosition = new Vector3(0.0f, 0.25f, 0.0f);
 
 
 
-                if(DEBUG_TRACE)
+                if (DEBUG_TRACE)
                     print("Facing Up");
             }
             else if (vertical == -1)
             {
                 // Switch to sprite facing down
                 playerCollider.offset = new Vector2(0.0f, -1.666667f);
-            
+                spawnerTransform.localPosition = new Vector3(0.0f, -1.0f, 0.0f);
+
 
 
                 if (DEBUG_TRACE)
