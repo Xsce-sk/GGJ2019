@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Vacuum : MonoBehaviour
 {
+    private bool haveVacuum = false;
+    public int vacuumPoints = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,23 @@ public class Vacuum : MonoBehaviour
     {
 
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.name == "VacuumCleaner")
+        {
+            haveVacuum = true;
+            Destroy(col.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.name.Contains("Dirt") && haveVacuum)
+        {
+            Score.scoreTracker += vacuumPoints;
+            Destroy(col.gameObject);
+        }
+    }
+
 }
