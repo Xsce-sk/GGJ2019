@@ -5,6 +5,9 @@ using UnityEngine;
 public class SpriteController : MonoBehaviour
 {
     Transform spriteTransform;
+
+    public BoxCollider2D playerCollider;
+    public GameObject spawner;
     [SerializeField] private bool DEBUG_TRACE = true;
     [SerializeField] private float horizontal;
     [SerializeField] private float vertical;
@@ -22,9 +25,19 @@ public class SpriteController : MonoBehaviour
         // Facing Left or Right
         if (horizontal != 0)
         {
-            spriteTransform.localScale = new Vector3(horizontal, 1.0f, 1.0f);
-            if (DEBUG_TRACE)
-                print("Facing left or right");
+            spriteTransform.localScale = new Vector3(horizontal, spriteTransform.localScale.y, spriteTransform.localScale.z);
+            if(horizontal == 1)
+            {
+                playerCollider.offset = new Vector2(2.0f, -0.333333f);
+                if (DEBUG_TRACE)
+                    print("Facing Right");
+            }
+            else
+            {
+                playerCollider.offset = new Vector2(-2.0f, -0.333333f);
+                if (DEBUG_TRACE)
+                    print("Facing Left");
+            }
         }
         // Facing Up or Down
         else if (vertical != 0)
@@ -32,6 +45,9 @@ public class SpriteController : MonoBehaviour
             if (vertical == 1)
             {
                 // Switch to sprite facing up
+                playerCollider.offset = new Vector2(0.0f, 1.0f);
+
+
 
                 if(DEBUG_TRACE)
                     print("Facing Up");
@@ -39,6 +55,9 @@ public class SpriteController : MonoBehaviour
             else if (vertical == -1)
             {
                 // Switch to sprite facing down
+                playerCollider.offset = new Vector2(0.0f, -1.666667f);
+            
+
 
                 if (DEBUG_TRACE)
                     print("Facing Down");
