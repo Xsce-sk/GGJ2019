@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tools : MonoBehaviour
+public class Vacuum : MonoBehaviour
 {
-    public List<int>
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,6 @@ public class Tools : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
