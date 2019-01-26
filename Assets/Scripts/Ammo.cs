@@ -10,6 +10,7 @@ public class Ammo : MonoBehaviour
     public GameObject ammoType;
     Vector2 v;
     public Transform playerTransform;
+    public float offset = 1;;
     
     // Start is called before the first frame update
     void Start()
@@ -61,30 +62,33 @@ public class Ammo : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Trash")))
+        if (col.gameObject.name != "Player")
         {
-            Vector3 spawnLocation = col.gameObject.transform.position;
+            if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Trash")))
+            {
+                Vector3 spawnLocation = gameObject.transform.position;
 
-            if (v.x > 0)
-            {
-                spawnLocation += new Vector3(-1.5f, 0, 0);
-            }
-            else if (v.x < 0)
-            {
-                spawnLocation += new Vector3(1.5f, 0, 0);
-            }
-            else if (v.y > 0)
-            {
-                spawnLocation += new Vector3(0, -1.5f, 0);
-            }
-            else if (v.y < 0)
-            {
-                spawnLocation += new Vector3(0, 1.5f, 0);
+                if (v.x > 0)
+                {
+                    spawnLocation += new Vector3(-offset, 0, 0);
+                }
+                else if (v.x < 0)
+                {
+                    spawnLocation += new Vector3(offset, 0, 0);
+                }
+                else if (v.y > 0)
+                {
+                    spawnLocation += new Vector3(0, -offset, 0);
+                }
+                else if (v.y < 0)
+                {
+                    spawnLocation += new Vector3(0, offset, 0);
+                }
+
+                Instantiate(ammoType, spawnLocation, Quaternion.identity);
             }
 
-            Instantiate(ammoType, spawnLocation, Quaternion.identity);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }
