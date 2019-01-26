@@ -19,11 +19,27 @@ public class LockCleanMechanic : MonoBehaviour
         if (collision.CompareTag("Dirty"))
         {
             // stop player movement
+            // get object
+            // get object script
             m_IsCleaning = true;
         }
     }
 
-    
+    /*
+    void Update()
+    {
+        if (m_IsCleaning)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+                CleanObject();
+            if (Input.GetKeyDown(KeyCode.W))
+                CleanObject();
+            if (Input.GetKeyDown(KeyCode.W))
+                CleanObject();
+            if (Input.GetKeyDown(KeyCode.W))
+                CleanObject();
+        }
+    }*/
 
 
 }
