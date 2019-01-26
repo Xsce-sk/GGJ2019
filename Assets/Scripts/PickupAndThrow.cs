@@ -25,13 +25,13 @@ public class PickupAndThrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name.Contains("Trash"))
+        if(col.gameObject.name.Contains("Trash") && !col.gameObject.name.Contains("Ammo"))
         {
             inventory.Push(0);
             Destroy(col.gameObject);
         }
 
-        if(col.gameObject.name.Contains("Clothes"))
+        if(col.gameObject.name.Contains("Clothes") && !col.gameObject.name.Contains("Ammo"))
         {
             inventory.Push(1);
             Destroy(col.gameObject);
