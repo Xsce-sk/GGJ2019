@@ -15,10 +15,11 @@ GameObject:
   - component: {fileID: 7074201373222581782}
   - component: {fileID: 7074201373222581780}
   - component: {fileID: 7074201373222581787}
+  - component: {fileID: 2994383490682955886}
   - component: {fileID: 7074201373222581776}
   - component: {fileID: 7074201373222581786}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +161,20 @@ MonoBehaviour:
   - {fileID: 7807641855521827353, guid: ccfc16ca78b289a44939d4c2a5d0acc8, type: 3}
   - {fileID: 567146605323533248, guid: a2c7af8671f96f14ab02bb3d0200aa66, type: 3}
   spawner: {fileID: 0}
+--- !u!114 &2994383490682955886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7074201373222581779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da14adaecc0c984aaf4c889db9ac5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vacuumPoints: 20
+  vacuumIcon: {fileID: 0}
 --- !u!212 &7074201373222581776
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -97,7 +97,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!50 &7807641855521827351
 Rigidbody2D:
   serializedVersion: 4
@@ -136,5 +136,4 @@ MonoBehaviour:
     type: 3}
   playerTransform: {fileID: 0}
   offset: 1
-  s: {fileID: 0}
   scorePoints: 10
