@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 0}
   spawner: {fileID: 7074201374075565144}
+  animator: {fileID: 7074201373222581786}
   DEBUG_TRACE: 1
   horizontal: 0
   vertical: 0

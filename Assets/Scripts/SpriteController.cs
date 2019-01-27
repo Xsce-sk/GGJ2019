@@ -9,6 +9,7 @@ public class SpriteController : MonoBehaviour
 
     public BoxCollider2D playerCollider;
     public GameObject spawner;
+    public Animator animator;
     [SerializeField] private bool DEBUG_TRACE = true;
     [SerializeField] private float horizontal;
     [SerializeField] private float vertical;
@@ -25,10 +26,13 @@ public class SpriteController : MonoBehaviour
 
     void Update()
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
         if (!m_Cleaner.isCleaning)
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
+            animator.SetFloat("sClean", 0);
+            animator.SetFloat("uClean", 0);
+            animator.SetFloat("dClean", 0);
 
             // Facing Left or Right
             if (horizontal != 0)
@@ -75,6 +79,26 @@ public class SpriteController : MonoBehaviour
                         print("Facing Down");
                 }
             }
+        }
+        else
+        {
+            if (DirectionControls.facing == DirectionControls.Direction.Right)
+            {
+                animator.SetFloat("sClean", 1);
+            }
+            else if (DirectionControls.facing == DirectionControls.Direction.Left)
+            {
+                animator.SetFloat("sClean", 1);
+            }
+            else if (DirectionControls.facing == DirectionControls.Direction.Up)
+            {
+                animator.SetFloat("uClean", 1);
+            }
+            else if (DirectionControls.facing == DirectionControls.Direction.Down)
+            {
+                animator.SetFloat("dClean", 1);
+            }
+
         }
     }
 }
