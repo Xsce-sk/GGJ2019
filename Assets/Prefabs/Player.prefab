@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1727973078024710509}
   - component: {fileID: 1727973078024710510}
   - component: {fileID: 1727973078024710506}
+  - component: {fileID: 5313717351635421961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -223,6 +224,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  animator: {fileID: 0}
+--- !u!114 &5313717351635421961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727973078024710511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431129166d5fe094994cdde1804e41b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleanKey: 0
+  OnClean:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cleaner+CleanableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1727973078101389221
 GameObject:
   m_ObjectHideFlags: 0
