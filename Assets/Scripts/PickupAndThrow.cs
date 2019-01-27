@@ -43,9 +43,24 @@ public class PickupAndThrow : MonoBehaviour
             inventory.Push(0);
             Destroy(col.gameObject);
         }
-        else if(col.gameObject.name.Contains("Clothes") && !col.gameObject.name.Contains("Ammo"))
+        else if(col.gameObject.name.Contains("ClothesWhite") && !col.gameObject.name.Contains("Ammo"))
         {
             inventory.Push(1);
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.name.Contains("ClothesBlue") && !col.gameObject.name.Contains("Ammo"))
+        {
+            inventory.Push(2);
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.name.Contains("ClothesGreen") && !col.gameObject.name.Contains("Ammo"))
+        {
+            inventory.Push(3);
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.name.Contains("ClothesRed") && !col.gameObject.name.Contains("Ammo"))
+        {
+            inventory.Push(4);
             Destroy(col.gameObject);
         }
     }

@@ -130,6 +130,9 @@ MonoBehaviour:
   ammo:
   - {fileID: 7807641855521827353, guid: ccfc16ca78b289a44939d4c2a5d0acc8, type: 3}
   - {fileID: 567146605323533248, guid: a2c7af8671f96f14ab02bb3d0200aa66, type: 3}
+  - {fileID: 567146605323533248, guid: 16bcdc2aecf1be340bea9169822bff83, type: 3}
+  - {fileID: 567146605323533248, guid: 6d24d2c5f88f2d94ab9a806115b3b9a8, type: 3}
+  - {fileID: 567146605323533248, guid: 172044838cbe8ad45b18e26882eaefc1, type: 3}
   spawner: {fileID: 0}
   facing: 0
   speed: 5
