@@ -10,13 +10,13 @@ public class OrderLayerControl : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        sr.sortingOrder = (int)-transform.position.y;
+        sr.sortingOrder = (int)(-transform.position.y * 100f);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(isPlayer)
-            sr.sortingOrder = (int)-transform.position.y;
+            sr.sortingOrder = (int)(-(transform.position.y * 100f));
     }
 }
