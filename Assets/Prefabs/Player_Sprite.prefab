@@ -108,7 +108,6 @@ MonoBehaviour:
     m_TypeName: Cleaner+CleanableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_Direction: 0
-  m_CanClean: 0
 --- !u!114 &7074201373222581782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6c9a95dd139ed4fbafd332e8d5215c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7.5
   animator: {fileID: 7074201373222581786}
 --- !u!114 &7074201373222581780
 MonoBehaviour:
