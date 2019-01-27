@@ -11,6 +11,7 @@ public class Cleaner : MonoBehaviour
     enum Direction { Up, Down, Left, Right };
 
     public KeyCode cleanKey = KeyCode.LeftShift;
+    public bool isCleaning;
     public CleanableEvent OnClean;
     
     protected BoxCollider2D m_BoxCollider2D;
@@ -18,8 +19,12 @@ public class Cleaner : MonoBehaviour
     [SerializeField] Direction m_Direction;
 
     [SerializeField] protected bool m_CanClean;
-    [SerializeField] protected bool m_IsCleaning;
-    
+
+    public void StopCleaning()
+    {
+        isCleaning = false;
+    }
+
     void Awake()
     {
         m_BoxCollider2D = GetComponent<BoxCollider2D>();
@@ -49,7 +54,7 @@ public class Cleaner : MonoBehaviour
             m_Direction = FindPlayerDirection();
         }
 
-        if (!m_IsCleaning)
+        if (!isCleaning)
         {
             if (Input.GetKeyDown(cleanKey))
             {
@@ -57,10 +62,7 @@ public class Cleaner : MonoBehaviour
 
                 if (m_CanClean)
                 {
-                    // DisablePlayerMovement()
-                    // ChangeSprite()
-                    m_IsCleaning = true;
-                    print("canClean");
+                    isCleaning = true;
                 }
             }
         }
@@ -68,10 +70,7 @@ public class Cleaner : MonoBehaviour
         {
             if (Input.GetKeyDown(cleanKey))
             {
-                // EnablePlayerMovement()
-                // ResetSprite()
-                m_IsCleaning = false;
-                print("can'tClean");
+                isCleaning = false;
             }
 
             ReadCleaningInputs();
@@ -94,9 +93,9 @@ public class Cleaner : MonoBehaviour
     {
         Vector2 direction = GetDirection();
         float distance = 1.0f;
-
-        RaycastHit2D cleanCheck = Physics2D.Raycast(transform.position, direction, distance);
-        Debug.DrawRay(transform.position, direction.normalized * distance, Color.green, 1.0f);
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
+        RaycastHit2D cleanCheck = Physics2D.Raycast(pos, direction, distance);
+        Debug.DrawRay(pos, direction.normalized * distance, Color.green, 1.0f);
         if (cleanCheck.collider != null)
         {
             print(cleanCheck.collider.tag);
@@ -115,18 +114,18 @@ public class Cleaner : MonoBehaviour
     Direction FindPlayerDirection()
     {
         Direction dir = m_Direction;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        if (horizontalInput < 0)
-            dir = Direction.Left;
-        else if (horizontalInput > 0)
-            dir = Direction.Right;
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         if (verticalInput < 0)
             dir = Direction.Down;
         else if (verticalInput > 0)
             dir = Direction.Up;
+
+        if (horizontalInput < 0)
+            dir = Direction.Left;
+        else if (horizontalInput > 0)
+            dir = Direction.Right;
 
         return dir;
     }

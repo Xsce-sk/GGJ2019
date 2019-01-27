@@ -18,8 +18,8 @@ public class ScoreText : MonoBehaviour
     {
         m_RectTransform = GetComponent<RectTransform>();
         m_TextMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
+        Offset();
         StartCoroutine("Animation");
-        SetScore(100);
     }
 
     void Offset()
@@ -27,11 +27,6 @@ public class ScoreText : MonoBehaviour
         Vector3 initialPos = m_RectTransform.position;
         Vector3 offset = new Vector3(Random.Range(-offsetAmount, offsetAmount), Random.Range(-offsetAmount, offsetAmount), 0f);
         transform.position = new Vector3(initialPos.x + offset.x, initialPos.y + offset.y, initialPos.z);
-    }
-
-    public void SetScore(int score)
-    {
-        m_TextMeshProUGUI.text = "+" + score.ToString();
     }
 
     IEnumerator Animation()

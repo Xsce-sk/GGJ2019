@@ -10,7 +10,8 @@ public class Cleanable : MonoBehaviour
 
     public int startingDirtiness = 20;
     public int worth = 500;
-    public GameObject ScoreTextPrefab;
+    public GameObject CleanTextPrefab;
+    public GameObject FinishTextPrefab;
     public CleanEvent OnClean;
     public CleanEvent OnFullyCleaned;
 
@@ -25,18 +26,17 @@ public class Cleanable : MonoBehaviour
     {
         m_CurrentDirtiness -= 1;
 
-        GameObject instantiatedScore = Instantiate(ScoreTextPrefab) as GameObject;
-        ScoreText scoreScript = instantiatedScore.GetComponent<ScoreText>();
-
         if (m_CurrentDirtiness <= 0)
         {
             OnFullyCleaned.Invoke(this);
-            scoreScript.SetScore(worth);
+            Instantiate(FinishTextPrefab, transform.position, Quaternion.identity);
+            Score.scoreTracker += worth;
         }
         else
         {
             OnClean.Invoke(this);
-            scoreScript.SetScore(100);
+            Instantiate(CleanTextPrefab, transform.position, Quaternion.identity);
+            Score.scoreTracker += 100;
         }
     }
 }
