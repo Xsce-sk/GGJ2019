@@ -56,13 +56,14 @@ public class Cleaner : MonoBehaviour
 
         if (!isCleaning)
         {
-            if (Input.GetKeyDown(cleanKey))
+            if (Input.GetKey(cleanKey))
             {
                 CheckClean();
 
                 if (m_CanClean)
                 {
                     isCleaning = true;
+                    GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 }
             }
         }
@@ -93,7 +94,7 @@ public class Cleaner : MonoBehaviour
     void CheckClean()
     {
         Vector2 direction = GetDirection();
-        float distance = 1.0f;
+        float distance = 1.5f;
         Vector3 pos = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
         RaycastHit2D cleanCheck = Physics2D.Raycast(pos, direction, distance);
         Debug.DrawRay(pos, direction.normalized * distance, Color.green, 1.0f);

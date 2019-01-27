@@ -17,6 +17,6 @@ public class OrderLayerControl : MonoBehaviour
     void Update()
     {
         if(isPlayer)
-            sr.sortingOrder = (int)(-(transform.position.y * 100f));
+            sr.sortingOrder = (int)(-(transform.position.y * 100f + 2f));
     }
 }
