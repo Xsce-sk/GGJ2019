@@ -10,7 +10,7 @@ public class Cleaner : MonoBehaviour
 
     enum Direction { Up, Down, Left, Right };
 
-    public KeyCode cleanKey = KeyCode.LeftShift;
+    public KeyCode cleanKey = KeyCode.Mouse1;
     public bool isCleaning;
     public CleanableEvent OnClean;
     
@@ -18,7 +18,7 @@ public class Cleaner : MonoBehaviour
     protected Collider2D m_Target;
     [SerializeField] Direction m_Direction;
 
-    [SerializeField] protected bool m_CanClean;
+    protected bool m_CanClean;
 
     public void StopCleaning()
     {
