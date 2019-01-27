@@ -970,6 +970,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f00cb6a1bcdf1418a7df1587b0a420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1301642326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 573257250574909499, guid: 16ba8b85832cfc949a8fe3737826ddfc,
+    type: 3}
+  m_PrefabInstance: {fileID: 573257251842309229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1301642327
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301642326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.61}
+  m_Size: {x: 4.75, y: 1.68}
+  m_Direction: 1
 --- !u!1 &1350950164
 GameObject:
   m_ObjectHideFlags: 0
