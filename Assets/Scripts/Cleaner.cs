@@ -68,12 +68,13 @@ public class Cleaner : MonoBehaviour
         }
         else // Cleaning
         {
-            if (Input.GetKeyDown(cleanKey))
-            {
-                isCleaning = false;
-            }
-
             ReadCleaningInputs();
+        }
+
+        
+        if (Input.GetKeyUp(cleanKey))
+        {
+            isCleaning = false;
         }
     }
 

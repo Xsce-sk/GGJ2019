@@ -16,6 +16,7 @@ public class Cleanable : MonoBehaviour
     public CleanEvent OnFullyCleaned;
 
     protected int m_CurrentDirtiness;
+    protected float m_Alpha;
 
     void Start()
     {
@@ -37,6 +38,25 @@ public class Cleanable : MonoBehaviour
             OnClean.Invoke(this);
             Instantiate(CleanTextPrefab, transform.position, Quaternion.identity);
             Score.scoreTracker += 100;
+        }
+
+        UpdateDirt();
+    }
+
+    void UpdateDirt()
+    {
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            m_Alpha = (float)m_CurrentDirtiness / startingDirtiness;
+            
+            GameObject dirt = gameObject.transform.GetChild(i).gameObject;
+
+            print(m_Alpha);
+            if (m_Alpha == 0)
+            {
+                Destroy(dirt);
+            }
+            dirt.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, m_Alpha);
         }
     }
 }
