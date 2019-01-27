@@ -212,7 +212,7 @@ PrefabInstance:
     - target: {fileID: 8478883817278475907, guid: 106a11b5db211c04db5a26b6aaf77929,
         type: 3}
       propertyPath: OnClean.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8478883817278475907, guid: 106a11b5db211c04db5a26b6aaf77929,
         type: 3}
@@ -470,7 +470,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 9c6afe46a6aeb3d4d8b32caf09f3823a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 1958445827}
   m_Layer: 0
   m_Name: RedCouch
-  m_TagString: Untagged
+  m_TagString: Dirty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1150,6 +1150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingDirtiness: 10
+  ScoreTextPrefab: {fileID: 5258893130309128481, guid: 5e425e13904839943b325a2176785c8d,
+    type: 3}
   OnClean:
     m_PersistentCalls:
       m_Calls: []

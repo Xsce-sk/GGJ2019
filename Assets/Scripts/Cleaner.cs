@@ -48,6 +48,7 @@ public class Cleaner : MonoBehaviour
                 // DisablePlayerMovement()
                 // ChangeSprite()
                 m_IsCleaning = true;
+                print("canClean");
             }
         }
         else // Cleaning
@@ -57,6 +58,7 @@ public class Cleaner : MonoBehaviour
                 // EnablePlayerMovement()
                 // ResetSprite()
                 m_IsCleaning = false;
+                print("can'tClean");
             }
 
             ReadCleaningInputs();
