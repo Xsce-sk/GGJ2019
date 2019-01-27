@@ -66,18 +66,18 @@ public class Cleanable : MonoBehaviour
                 }
                 child.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, m_Alpha);
             }
-            else if (child.CompareTag("DirtObject"))
+            else if (child.CompareTag("Shine"))
             {
                 if (m_Alpha == 0)
                 {
-                    Destroy(child);
+                    child.SetActive(true);
                 }
             }
             else
             {
                 if (m_Alpha == 0)
                 {
-                    child.SetActive(true);
+                    Destroy(child);
                 }
             }
         }
