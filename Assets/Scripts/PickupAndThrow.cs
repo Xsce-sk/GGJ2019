@@ -29,7 +29,7 @@ public class PickupAndThrow : MonoBehaviour
             facing = FindPlayerDirection();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && inventory.Count > 0)
+        if (Input.GetKeyDown(KeyCode.LeftBracket) && inventory.Count > 0)
         {
             Instantiate(ammo[inventory.Pop()], spawner.position, Quaternion.identity);
             StartCoroutine("TempDisableMovement");
