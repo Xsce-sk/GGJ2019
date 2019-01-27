@@ -36,21 +36,25 @@ public class Food : MonoBehaviour
         if (col.gameObject.name == "Food" && !haveRawFood)
         {
             haveRawFood = true;
+            Debug.Log("have raw food");
             Destroy(col.gameObject);
         }
 
         if(col.gameObject.name == "Stove" && haveRawFood && startCookTime == 0)
         {
             haveRawFood = false;
+            Debug.Log("started cooking");
             startCookTime = Time.time;
         }
 
         if(foodBurnt && startCookTime != 0 && col.gameObject.name == "Stove")
         {
+            Debug.Log("Have burnt food");
             haveBurntFood = true;
         }
         else if (foodReady && startCookTime != 0 && col.gameObject.name == "Stove")
         {
+            Debug.Log("have cooked food");
             haveCookedFood = true;
         }
 
