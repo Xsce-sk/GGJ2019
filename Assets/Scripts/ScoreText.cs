@@ -42,7 +42,7 @@ public class ScoreText : MonoBehaviour
         Vector3 initialPos = m_RectTransform.position;
         Vector3 targetPos = new Vector3(initialPos.x, initialPos.y + height, initialPos.z);
         float t = 0;
-        while (t <= 1.0f)
+        while (t <= 1)
         {
             t += Time.deltaTime;
             m_RectTransform.position = Vector3.Lerp(initialPos, targetPos, t);
@@ -54,10 +54,11 @@ public class ScoreText : MonoBehaviour
     IEnumerator ColorTo()
     {
         float t = 0;
-        while (t <= 1.0f)
+        Color currentColor = startColor;
+        while (t <= duration)
         {
             t += Time.deltaTime;
-            m_TextMeshProUGUI.color = Color.Lerp(startColor, endColor, t);
+            m_TextMeshProUGUI.color = Color.Lerp(currentColor, endColor, t);
             yield return new WaitForFixedUpdate();
         }
         m_TextMeshProUGUI.color = endColor;

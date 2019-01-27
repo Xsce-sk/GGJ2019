@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3605307726212884267, guid: 54a2683b56d948e4f946056fa06610be,
         type: 3}
       propertyPath: m_Name
-      value: 300ScoreText
+      value: 500ScoreText
       objectReference: {fileID: 0}
     - target: {fileID: 3605307726212884264, guid: 54a2683b56d948e4f946056fa06610be,
         type: 3}
@@ -116,6 +116,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605307726212884264, guid: 54a2683b56d948e4f946056fa06610be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605307726212884264, guid: 54a2683b56d948e4f946056fa06610be,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3605307726286953646, guid: 54a2683b56d948e4f946056fa06610be,
         type: 3}
