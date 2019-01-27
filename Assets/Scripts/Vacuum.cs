@@ -6,6 +6,7 @@ public class Vacuum : MonoBehaviour
 {
     private bool haveVacuum = false;
     public int vacuumPoints = 20;
+    public SpriteRenderer vacuumIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Vacuum : MonoBehaviour
         if(col.gameObject.name == "VacuumCleaner")
         {
             haveVacuum = true;
+            vacuumIcon.enabled = true;
             Destroy(col.gameObject);
         }
     }
