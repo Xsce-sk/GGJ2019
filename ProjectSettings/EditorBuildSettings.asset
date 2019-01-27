@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SpriteControllerTest.unity
-    guid: 6679f5863b9619f428308a7cc34f9020
+    path: Assets/Scenes/Main Menu.unity
+    guid: 5e3dba0efe14cea4a880458a998ac33d
   - enabled: 1
-    path: Assets/Scenes/UITest.unity
-    guid: 14486ffb2320b904395f008e75f71495
+    path: Assets/Scenes/Main.unity
+    guid: 2b5a34fb524c09e4cb454578d4026801
   m_configObjects: {}
