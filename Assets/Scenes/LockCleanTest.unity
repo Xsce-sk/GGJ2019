@@ -271,6 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7074201373222581781, guid: 106a11b5db211c04db5a26b6aaf77929, type: 3}
+    - {fileID: 1116545831659350300, guid: 106a11b5db211c04db5a26b6aaf77929, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 106a11b5db211c04db5a26b6aaf77929, type: 3}
 --- !u!1 &133485625 stripped
 GameObject:
@@ -2160,5 +2161,25 @@ PrefabInstance:
       propertyPath: OnFullyCleaned.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 133485633}
+    - target: {fileID: 367085564, guid: 3829fe9c624022d4d9729151301cae7a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 669387883, guid: 3829fe9c624022d4d9729151301cae7a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 918578670, guid: 3829fe9c624022d4d9729151301cae7a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 923884172, guid: 3829fe9c624022d4d9729151301cae7a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549597864, guid: 3829fe9c624022d4d9729151301cae7a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3829fe9c624022d4d9729151301cae7a, type: 3}

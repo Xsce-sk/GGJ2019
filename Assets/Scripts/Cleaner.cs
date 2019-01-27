@@ -95,12 +95,12 @@ public class Cleaner : MonoBehaviour
     {
         Vector2 direction = GetDirection();
         float distance = 1.5f;
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y - 1.5f, transform.position.z);
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y - 1.3f, transform.position.z);
         RaycastHit2D cleanCheck = Physics2D.Raycast(pos, direction, distance);
         Debug.DrawRay(pos, direction.normalized * distance, Color.green, 1.0f);
         if (cleanCheck.collider != null)
         {
-            print(cleanCheck.collider.tag);
+            print("Obj Name: " + cleanCheck.collider.name + "\nObj Tag: " + cleanCheck.collider.tag);
             if (cleanCheck.collider.CompareTag("Dirty"))
             {
                 m_CanClean = true;
