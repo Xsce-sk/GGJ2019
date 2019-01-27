@@ -20,6 +20,7 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        xVelocity = yVelocity = 0f;
         if (!m_Cleaner.isCleaning)
         {
             if (Input.GetKey(KeyCode.A))
