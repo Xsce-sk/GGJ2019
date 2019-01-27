@@ -27,7 +27,6 @@ public class PickupAndThrow : MonoBehaviour
         if (MovementButtonPressedReleased())
         {
             facing = FindPlayerDirection();
-            //Debug.Log(facing);
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && inventory.Count > 0)

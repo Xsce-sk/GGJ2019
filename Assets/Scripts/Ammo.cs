@@ -16,11 +16,11 @@ public class Ammo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawner = GameObject.Find("Spawner").GetComponent<Transform>();
+        //spawner = GameObject.Find("Spawner").GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
-        playerTransform = GameObject.Find("Player_Sprite").GetComponent<Transform>();
+        //playerTransform = GameObject.Find("Player_Sprite").GetComponent<Transform>();
 
-        if (spawner.localPosition.x != 0)
+        /*if (spawner.localPosition.x != 0)
         {
             if (playerTransform.localScale.x > 0)
                 v = rb2d.velocity = new Vector2(speed, 0);
@@ -35,7 +35,26 @@ public class Ammo : MonoBehaviour
 
             if (spawner.localPosition.y < 0)
                 v = rb2d.velocity = new Vector2(0, -speed);
+        }*/
+
+        if(DirectionControls.facing == DirectionControls.Direction.Right)
+        {
+            v = rb2d.velocity = new Vector2(speed, 0);
         }
+        else if (DirectionControls.facing == DirectionControls.Direction.Left)
+        {
+            v = rb2d.velocity = new Vector2(-speed, 0);
+        }
+        else if (DirectionControls.facing == DirectionControls.Direction.Up)
+        {
+            v = rb2d.velocity = new Vector2(0, speed);
+        }
+        else if (DirectionControls.facing == DirectionControls.Direction.Down)
+        {
+            v = rb2d.velocity = new Vector2(0, -speed);
+        }
+
+
     }
 
     // Update is called once per frame
