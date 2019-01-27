@@ -38,6 +38,7 @@ public class Timer : MonoBehaviour
             time.text = "0:00";
             UIPanel.SetActive(false);
             EndScreenPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

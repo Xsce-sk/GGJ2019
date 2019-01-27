@@ -23,6 +23,7 @@ public class LoadScene : MonoBehaviour
     public void LoadSceneIndex(int index)
     {
         SceneManager.LoadScene(index);
+        Time.timeScale = 1;
     }
 
     public void QuitGame()
