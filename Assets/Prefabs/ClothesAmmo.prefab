@@ -121,7 +121,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   offset: 1
   scorePoints: 10
-  force: 100
+  force: 5
 --- !u!58 &3248941074816311363
 CircleCollider2D:
   m_ObjectHideFlags: 0

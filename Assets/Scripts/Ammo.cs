@@ -122,18 +122,21 @@ public class Ammo : MonoBehaviour
 
     IEnumerator SpawnStuff()
     {
-        GameObject stuff = Instantiate(ammoType, spawnLocation, Quaternion.identity);
+        GameObject stuff = Instantiate(ammoType, spawnLocation, Quaternion.identity) as GameObject;
+        Rigidbody2D rb2dStuff = stuff.GetComponent<Rigidbody2D>();
+        BoxCollider2D bc2dStuff = stuff.GetComponent<BoxCollider2D>();
+
         canSpawn = false;
         yield return new WaitForSeconds(Time.deltaTime);
         canSpawn = true;
 
-        stuff.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0) * force);
-        stuff.GetComponent<BoxCollider2D>().isTrigger = false;
+        rb2dStuff.velocity = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)) * force;
+        bc2dStuff.isTrigger = false;
 
         yield return new WaitForSeconds(5f);
 
-        stuff.GetComponent<BoxCollider2D>().isTrigger = true;
-        stuff.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+        bc2dStuff.isTrigger = true;
+        rb2dStuff.velocity = new Vector3(0, 0, 0);
 
     }
 }
