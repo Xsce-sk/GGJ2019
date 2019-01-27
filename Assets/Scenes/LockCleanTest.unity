@@ -286,6 +286,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 106a11b5db211c04db5a26b6aaf77929, type: 3}
+--- !u!4 &133485636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7074201373222581783, guid: 106a11b5db211c04db5a26b6aaf77929,
+    type: 3}
+  m_PrefabInstance: {fileID: 133485624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &145428763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -533,6 +539,51 @@ PrefabInstance:
     - target: {fileID: 2697588272268042192, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497888503775435059, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497888503775435059, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945008683359327231, guid: fdd40ed678fb7084dbb3f2924fa2c88d,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1533,6 +1584,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6592124156837085092, guid: ada4b6d17797e06438dd0de475c6cff5,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 133485636}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada4b6d17797e06438dd0de475c6cff5, type: 3}
 --- !u!1001 &3764194703123166636

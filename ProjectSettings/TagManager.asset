@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dirty
+  - Dirt
+  - DirtObject
   layers:
   - Default
   - TransparentFX

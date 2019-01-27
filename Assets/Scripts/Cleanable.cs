@@ -55,15 +55,31 @@ public class Cleanable : MonoBehaviour
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
             m_Alpha = (float)m_CurrentDirtiness / startingDirtiness;
-            
-            GameObject dirt = gameObject.transform.GetChild(i).gameObject;
 
-            // print(m_Alpha);
-            if (m_Alpha == 0)
+            GameObject child = gameObject.transform.GetChild(i).gameObject;
+
+            if (child.CompareTag("Dirt"))
             {
-                Destroy(dirt);
+                if (m_Alpha == 0)
+                {
+                    Destroy(child);
+                }
+                child.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, m_Alpha);
             }
-            dirt.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, m_Alpha);
+            else if (child.CompareTag("DirtObject"))
+            {
+                if (m_Alpha == 0)
+                {
+                    Destroy(child);
+                }
+            }
+            else
+            {
+                if (m_Alpha == 0)
+                {
+                    child.SetActive(true);
+                }
+            }
         }
     }
 }
