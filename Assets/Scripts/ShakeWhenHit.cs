@@ -26,13 +26,23 @@ public class ShakeWhenHit : MonoBehaviour
 
     IEnumerator Shake()
     {
+        float randNum = Random.Range(0f, 10f);
         Transform originalTransform = gameObject.transform;
-        transform.Rotate(new Vector3(0, 0, 1f) * 20f);
-        yield return new WaitForSeconds(0.1f);
+
+        transform.Rotate(new Vector3(0, 0, 1f) * (20f + randNum));
+        yield return new WaitForSeconds(Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, 1f) * (20f + randNum));
+        yield return new WaitForSeconds(Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, -1f) * (20f + randNum));
+        yield return new WaitForSeconds(Time.deltaTime);
         gameObject.transform.rotation = originalTransform.rotation;
-        yield return new WaitForSeconds(0.1f);
-        originalTransform.Rotate(new Vector3(0, 0, -1f) * 20f);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, -1f) * (20f + randNum));
+        yield return new WaitForSeconds(Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, -1f) * (20f + randNum));
+        yield return new WaitForSeconds(Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, 1f) * (20f + randNum));
+        yield return new WaitForSeconds(Time.deltaTime);
         gameObject.transform.rotation = originalTransform.rotation;
     }
 }
