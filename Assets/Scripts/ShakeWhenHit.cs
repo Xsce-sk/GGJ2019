@@ -18,7 +18,7 @@ public class ShakeWhenHit : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.name.Contains("Trash") && gameObject.name == "Trashcan" || col.gameObject.name.Contains("Clothes") && gameObject.name == "Hamper")
+        if(col.gameObject.name.Contains("Trash") && gameObject.name == "Trashcan" || (col.gameObject.name.Contains("Clothes") || col.gameObject.name.Contains("Pants") && gameObject.name == "Hamper"))
         {
             StartCoroutine("Shake");
         }

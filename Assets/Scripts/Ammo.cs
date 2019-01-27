@@ -86,7 +86,7 @@ public class Ammo : MonoBehaviour
     {
         if (col.gameObject.name != "Player_Sprite")
         {
-            if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes")))
+            if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && (gameObject.name.Contains("Clothes") || gameObject.name.Contains("Pants"))))
             {
                 spawnLocation = gameObject.transform.position;
 
