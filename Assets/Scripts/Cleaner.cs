@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Cleaner : MonoBehaviour
 {
     [Serializable]
-    public class CleanableEvent : UnityEvent<Cleaner, Cleanable>
+    public class CleanableEvent : UnityEvent<Cleaner>
     { }
 
     public KeyCode cleanKey;
@@ -66,6 +66,6 @@ public class Cleaner : MonoBehaviour
     private void ReadCleaningInputs()
     {
         Cleanable cleanable = m_Target.GetComponent<Cleanable>();
-        OnClean.Invoke(this, cleanable);
+        cleanable.ReceiveClean();
     }
 }
