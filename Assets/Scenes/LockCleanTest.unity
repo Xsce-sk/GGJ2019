@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64694665}
   m_Layer: 0
-  m_Name: '--- Level Art ---'
+  m_Name: '--- Level Assets ---'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
