@@ -17,9 +17,16 @@ public class Cleanable : MonoBehaviour
 
     protected int m_CurrentDirtiness;
     protected float m_Alpha;
+    protected GameObject m_Player;
+
+    public void StopPlayerCleaning()
+    {
+        m_Player.GetComponent<Cleaner>().StopCleaning();
+    }
 
     void Start()
     {
+        m_Player = GameObject.FindGameObjectWithTag("Player");
         m_CurrentDirtiness = startingDirtiness;
     }
 

@@ -10,9 +10,17 @@ public class ScreenEffects : MonoBehaviour
     public float shakeAmount = 0.3f;
 
     protected Transform m_Transform;
+    protected float m_Multiplier = 2f;
 
     public void StartShake()
     {
+        m_Multiplier = 1f;
+        StartCoroutine("Shake");
+    }
+
+    public void StartLargeShake()
+    {
+        m_Multiplier = 3f;
         StartCoroutine("Shake");
     }
 
@@ -24,7 +32,7 @@ public class ScreenEffects : MonoBehaviour
     public IEnumerator Shake()
     {
         print("Shaking Screen");
-        float t = duration;
+        float t = duration * m_Multiplier;
         Vector3 startPos = m_Transform.position;
         Vector3 newPos = Vector3.zero;
         float xOffset = 0f;
@@ -32,8 +40,8 @@ public class ScreenEffects : MonoBehaviour
         while (t >= 0)
 
         {
-            xOffset = Random.Range(-shakeAmount, shakeAmount);
-            yOffset = Random.Range(-shakeAmount, shakeAmount);
+            xOffset = Random.Range(-shakeAmount, shakeAmount) * m_Multiplier;
+            yOffset = Random.Range(-shakeAmount, shakeAmount) * m_Multiplier;
             newPos = new Vector3(startPos.x + xOffset, startPos.y + yOffset, startPos.z);
             m_Transform.position = newPos;
 

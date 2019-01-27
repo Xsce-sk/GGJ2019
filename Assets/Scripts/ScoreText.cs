@@ -1,25 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class ScoreText : MonoBehaviour
 {
+    [System.Serializable]
+    public class ScoreTextEvent : UnityEvent<ScoreText>
+    { }
+
     public float duration = 0.5f;
     public float height = 0.5f;
     public float offsetAmount = 0.1f;
     public Color startColor;
     public Color endColor;
+    public ScoreTextEvent OnCreation;
 
     protected TextMeshProUGUI m_TextMeshProUGUI;
     protected RectTransform m_RectTransform;
+    protected Camera m_MainCamera;
+
+
+    public void SmallScreenShake()
+    {
+        m_MainCamera.GetComponent<ScreenEffects>().StartShake();
+    }
+
+    public void LargeScreenShake()
+    {
+        m_MainCamera.GetComponent<ScreenEffects>().StartLargeShake();
+    }
 
     void Start()
     {
         m_RectTransform = GetComponent<RectTransform>();
         m_TextMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
+        m_MainCamera = Camera.main;
         Offset();
         StartCoroutine("Animation");
+        OnCreation.Invoke(this);
     }
 
     void Offset()

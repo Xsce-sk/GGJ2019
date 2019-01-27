@@ -127,6 +127,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3605307726212884271, guid: 54a2683b56d948e4f946056fa06610be,
+        type: 3}
+      propertyPath: OnCreation.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LargeScreenShake
+      objectReference: {fileID: 0}
+    - target: {fileID: 3605307726212884271, guid: 54a2683b56d948e4f946056fa06610be,
+        type: 3}
+      propertyPath: OnCreation.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4061440759212376548}
     - target: {fileID: 3605307726286953646, guid: 54a2683b56d948e4f946056fa06610be,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -152,8 +162,30 @@ PrefabInstance:
       propertyPath: m_textInfo.textComponent
       value: 
       objectReference: {fileID: 4061440759403412069}
+    - target: {fileID: 1471185594507998497, guid: 54a2683b56d948e4f946056fa06610be,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0eee1af7d44551e41b1e34a7ab30bd56, type: 3}
+    - target: {fileID: 1471185594507998497, guid: 54a2683b56d948e4f946056fa06610be,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a2683b56d948e4f946056fa06610be, type: 3}
+--- !u!114 &4061440759212376548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3605307726212884271, guid: 54a2683b56d948e4f946056fa06610be,
+    type: 3}
+  m_PrefabInstance: {fileID: 744644921398814411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f292fd5a5f04a43b2bd2611ed40aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4061440759403412069 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3605307726286953646, guid: 54a2683b56d948e4f946056fa06610be,
