@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3687421438258530751}
   - component: {fileID: 3687421438258530750}
   m_Layer: 0
-  m_Name: MaybeCarpet
+  m_Name: Carpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -50
-  m_Sprite: {fileID: 21300000, guid: 70aa8155775431d408dcbbcd7ff4922d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c6afe46a6aeb3d4d8b32caf09f3823a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
