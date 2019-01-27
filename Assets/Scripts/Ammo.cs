@@ -16,9 +16,9 @@ public class Ammo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //spawner = GameObject.Find("Spawner").GetComponent<Transform>();
+        spawner = GameObject.Find("Spawner").GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
-        //playerTransform = GameObject.Find("Player_Sprite").GetComponent<Transform>();
+        playerTransform = GameObject.Find("Player_Sprite").GetComponent<Transform>();
 
         /*if (spawner.localPosition.x != 0)
         {
