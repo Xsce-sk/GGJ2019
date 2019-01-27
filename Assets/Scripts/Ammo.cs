@@ -12,7 +12,9 @@ public class Ammo : MonoBehaviour
     public Transform playerTransform;
     public float offset = 1;
     public int scorePoints = 10;
-    
+    private bool canSpawn = true;
+    Vector3 spawnLocation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +87,7 @@ public class Ammo : MonoBehaviour
         {
             if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes")))
             {
-                Vector3 spawnLocation = gameObject.transform.position;
+                spawnLocation = gameObject.transform.position;
 
                 if (v.x > 0)
                 {
@@ -104,7 +106,8 @@ public class Ammo : MonoBehaviour
                     spawnLocation += new Vector3(0, offset, 0);
                 }
 
-                Instantiate(ammoType, spawnLocation, Quaternion.identity);
+                if (canSpawn)
+                    StartCoroutine("SpawnStuff");
             }
             else if (col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes"))
             {
@@ -114,5 +117,13 @@ public class Ammo : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    IEnumerator SpawnStuff()
+    {
+        Instantiate(ammoType, spawnLocation, Quaternion.identity);
+        canSpawn = false;
+        yield return new WaitForSeconds(Time.deltaTime);
+        canSpawn = true;
     }
 }
