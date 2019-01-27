@@ -9,6 +9,7 @@ public class Cleanable : MonoBehaviour
     { }
 
     public int startingDirtiness = 20;
+    public int worth = 500;
     public GameObject ScoreTextPrefab;
     public CleanEvent OnClean;
     public CleanEvent OnFullyCleaned;
@@ -23,12 +24,19 @@ public class Cleanable : MonoBehaviour
     public void ReceiveClean()
     {
         m_CurrentDirtiness -= 1;
-        OnClean.Invoke(this);
+
+        GameObject instantiatedScore = Instantiate(ScoreTextPrefab) as GameObject;
+        ScoreText scoreScript = instantiatedScore.GetComponent<ScoreText>();
 
         if (m_CurrentDirtiness <= 0)
         {
             OnFullyCleaned.Invoke(this);
-
+            scoreScript.SetScore(worth);
+        }
+        else
+        {
+            OnClean.Invoke(this);
+            scoreScript.SetScore(100);
         }
     }
 }
