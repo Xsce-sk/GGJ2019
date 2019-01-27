@@ -18,7 +18,7 @@ public class Ammo : MonoBehaviour
     {
         spawner = GameObject.Find("Spawner").GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        playerTransform = GameObject.Find("Player_Sprite").GetComponent<Transform>();
 
         if (spawner.localPosition.x != 0)
         {
@@ -63,7 +63,7 @@ public class Ammo : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name != "Player")
+        if (col.gameObject.name != "Player_Sprite")
         {
             if (!(col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes")))
             {
