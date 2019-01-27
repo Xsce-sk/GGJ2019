@@ -28,8 +28,7 @@ public class Ammo : MonoBehaviour
             if (playerTransform.localScale.x < 0)
                 v = rb2d.velocity = new Vector2(-speed, 0);
         }
-
-        if (spawner.localPosition.y != 0)
+        else if (spawner.localPosition.y != 0)
         {
             if (spawner.localPosition.y > 0)
                 v = rb2d.velocity = new Vector2(0, speed);
