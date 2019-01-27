@@ -33,6 +33,7 @@ public class MovementController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             yVelocity = moveSpeed;
+            animator.SetFloat("vSpeed", 1);
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -55,6 +56,7 @@ public class MovementController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             yVelocity = 0;
+            animator.SetFloat("vSpeed", 0);
         }
 
         if (Input.GetKeyUp(KeyCode.S))
