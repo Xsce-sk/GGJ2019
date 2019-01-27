@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public float moveSpeed = 10f;
+    public Animator animator;
     private Rigidbody2D rb2d;
     private float xVelocity = 0f;
     private float yVelocity = 0f;
@@ -19,11 +20,13 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
+            animator.SetFloat("hSpeed", 1);
             xVelocity = -moveSpeed;            
         }
 
         if (Input.GetKey(KeyCode.D))
         {
+            animator.SetFloat("hSpeed", 1);
             xVelocity = moveSpeed;
         }
 
@@ -40,11 +43,13 @@ public class MovementController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A))
         {
             xVelocity = 0;
+            animator.SetFloat("hSpeed", 0);
         }
 
         if (Input.GetKeyUp(KeyCode.D))
         {
             xVelocity = 0;
+            animator.SetFloat("hSpeed", 0);
         }
 
         if (Input.GetKeyUp(KeyCode.W))
