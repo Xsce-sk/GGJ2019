@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346177476100016286}
   - component: {fileID: 346177476100016281}
+  - component: {fileID: 8346813001673374649}
   m_Layer: 0
   m_Name: Tv
   m_TagString: Untagged
@@ -79,3 +80,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &8346813001673374649
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346177476100016280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.5380211, y: -1.8000002}
+      - {x: -1.7720983, y: -2.476295}
+      - {x: 1.6883941, y: -2.476296}
+      - {x: 1.5418038, y: -1.8241444}
