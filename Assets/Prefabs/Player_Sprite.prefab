@@ -133,6 +133,7 @@ MonoBehaviour:
   - {fileID: 567146605323533248, guid: 16bcdc2aecf1be340bea9169822bff83, type: 3}
   - {fileID: 567146605323533248, guid: 6d24d2c5f88f2d94ab9a806115b3b9a8, type: 3}
   - {fileID: 567146605323533248, guid: 172044838cbe8ad45b18e26882eaefc1, type: 3}
+  - {fileID: 567146605323533248, guid: a329fba73c4cfdc499430d5d687dc28e, type: 3}
   spawner: {fileID: 0}
   facing: 0
   speed: 5

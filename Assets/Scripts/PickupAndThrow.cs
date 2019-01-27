@@ -63,6 +63,11 @@ public class PickupAndThrow : MonoBehaviour
             inventory.Push(4);
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.name.Contains("PantsBlue") && !col.gameObject.name.Contains("Ammo"))
+        {
+            inventory.Push(5);
+            Destroy(col.gameObject);
+        }
     }
 
     Direction FindPlayerDirection()
