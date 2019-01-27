@@ -14,6 +14,7 @@ public class Ammo : MonoBehaviour
     public int scorePoints = 10;
     private bool canSpawn = true;
     Vector3 spawnLocation;
+    public float force = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -121,9 +122,18 @@ public class Ammo : MonoBehaviour
 
     IEnumerator SpawnStuff()
     {
-        Instantiate(ammoType, spawnLocation, Quaternion.identity);
+        GameObject stuff = Instantiate(ammoType, spawnLocation, Quaternion.identity);
         canSpawn = false;
         yield return new WaitForSeconds(Time.deltaTime);
         canSpawn = true;
+
+        stuff.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0) * force);
+        stuff.GetComponent<BoxCollider2D>().isTrigger = false;
+
+        yield return new WaitForSeconds(5f);
+
+        stuff.GetComponent<BoxCollider2D>().isTrigger = true;
+        stuff.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
+
     }
 }
