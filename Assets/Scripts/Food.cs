@@ -24,9 +24,9 @@ public class Food : MonoBehaviour
     {
         if(startCookTime != 0)
         {
-            if (startCookTime + timeToCook + 10 > Time.time > startCookTime + timeToCook)
+            if ((startCookTime + timeToCook + 10f) > Time.time && Time.time> (startCookTime + timeToCook))
                 foodReady = true;
-            else if (startCookTime + timeToCook + 10 < Time.time)
+            else if (startCookTime + timeToCook + 10f < Time.time)
                 foodBurnt = true;
         }
     }
