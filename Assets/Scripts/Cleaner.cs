@@ -160,5 +160,6 @@ public class Cleaner : MonoBehaviour
     {
         Cleanable cleanable = m_Target.GetComponent<Cleanable>();
         cleanable.ReceiveClean();
+        OnClean.Invoke(this);
     }
 }

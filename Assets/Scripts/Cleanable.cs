@@ -51,7 +51,7 @@ public class Cleanable : MonoBehaviour
             
             GameObject dirt = gameObject.transform.GetChild(i).gameObject;
 
-            print(m_Alpha);
+            // print(m_Alpha);
             if (m_Alpha == 0)
             {
                 Destroy(dirt);
