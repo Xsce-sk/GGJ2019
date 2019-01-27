@@ -67,7 +67,5 @@ public class MovementController : MonoBehaviour
         }
 
         rb2d.velocity = new Vector2(xVelocity, yVelocity);
-
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -gameObject.transform.position.y);
     }
 }
