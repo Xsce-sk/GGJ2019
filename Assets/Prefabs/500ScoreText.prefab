@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 3605307726212884271, guid: 54a2683b56d948e4f946056fa06610be,
         type: 3}
       propertyPath: OnCreation.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LargeScreenShake
+      value: SmallScreenShake
       objectReference: {fileID: 0}
     - target: {fileID: 3605307726212884271, guid: 54a2683b56d948e4f946056fa06610be,
         type: 3}
