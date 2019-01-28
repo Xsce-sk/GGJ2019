@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShakeWhenHit : MonoBehaviour
 {
+    public GameObject scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,9 @@ public class ShakeWhenHit : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.name.Contains("Trash") && gameObject.name == "Trashcan" || (col.gameObject.name.Contains("Clothes") || col.gameObject.name.Contains("Pants") && gameObject.name == "Hamper"))
+        if ((col.gameObject.name.Contains("TrashAmmo") && gameObject.name == "Trashcan") || ((col.gameObject.name.Contains("Clothes") || col.gameObject.name.Contains("Pants")) && gameObject.name == "Hamper"))
         {
+            Instantiate(scoreText, this.transform.position, Quaternion.identity);
             StartCoroutine("Shake");
         }
     }

@@ -118,9 +118,11 @@ MonoBehaviour:
   speed: 10
   ammoType: {fileID: 8504922839414725965, guid: 8478e7be58d6e0648a4d967df5ca870f,
     type: 3}
+  scoreText: {fileID: 5258893130309128481, guid: 5e425e13904839943b325a2176785c8d,
+    type: 3}
   playerTransform: {fileID: 0}
   offset: 1
-  scorePoints: 10
+  scorePoints: 100
   force: 5
 --- !u!58 &3248941074816311363
 CircleCollider2D:

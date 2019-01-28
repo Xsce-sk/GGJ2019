@@ -8,8 +8,9 @@ public class Ammo : MonoBehaviour
     private Rigidbody2D rb2d;
     public float speed = 10;
     public GameObject ammoType;
+    public GameObject scoreText;
     Vector2 v;
-    public Transform playerTransform;
+    private Transform playerTransform;
     public float offset = 1;
     public int scorePoints = 10;
     private bool canSpawn = true;
@@ -113,6 +114,7 @@ public class Ammo : MonoBehaviour
             else if (col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes"))
             {
                 Score.scoreTracker += scorePoints;
+                //Instantiate(scoreText, this.transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);
@@ -122,21 +124,13 @@ public class Ammo : MonoBehaviour
 
     IEnumerator SpawnStuff()
     {
-        GameObject stuff = Instantiate(ammoType, spawnLocation, Quaternion.identity) as GameObject;
-        Rigidbody2D rb2dStuff = stuff.GetComponent<Rigidbody2D>();
-        BoxCollider2D bc2dStuff = stuff.GetComponent<BoxCollider2D>();
+        Instantiate(ammoType, spawnLocation, Quaternion.identity);
+
 
         canSpawn = false;
         yield return new WaitForSeconds(Time.deltaTime);
         canSpawn = true;
 
-        rb2dStuff.velocity = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1)) * force;
-        bc2dStuff.isTrigger = false;
-
-        yield return new WaitForSeconds(5f);
-
-        bc2dStuff.isTrigger = true;
-        rb2dStuff.velocity = new Vector3(0, 0, 0);
 
     }
 }
