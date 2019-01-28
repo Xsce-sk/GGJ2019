@@ -24,6 +24,7 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene(index);
         Time.timeScale = 1;
+        Score.scoreTracker = 0;
     }
 
     public void QuitGame()
