@@ -114,7 +114,6 @@ public class Ammo : MonoBehaviour
             else if (col.gameObject.name == "Trashcan" && gameObject.name.Contains("Trash") || col.gameObject.name == "Hamper" && gameObject.name.Contains("Clothes"))
             {
                 Score.scoreTracker += scorePoints;
-                //Instantiate(scoreText, this.transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

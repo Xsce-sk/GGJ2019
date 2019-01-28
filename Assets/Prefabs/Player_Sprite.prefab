@@ -150,8 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da14adaecc0c984aaf4c889db9ac5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vacuumPoints: 20
+  vacuumPoints: 100
   vacuumIcon: {fileID: 0}
+  scoreText: {fileID: 5258893130309128481, guid: 5e425e13904839943b325a2176785c8d,
+    type: 3}
 --- !u!114 &4203012135346641725
 MonoBehaviour:
   m_ObjectHideFlags: 0
